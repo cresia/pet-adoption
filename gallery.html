@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <title>Gallery</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Pet Adoption Service</h1>
+
+      <div class="main-header">
+        <nav>
+          <ul style="list-style-type: none; font-size:25px">
+            <li><a href="index.html" class="fa fa-home">Home</a></li>
+            <li><a href="animal-types.html" class='fas fa-dog'>View Pets</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html" class="fas fa-address-book">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- <div id="homeImage">
+        <div></div>
+      </div> -->
+
+    </header>
+
+
+    <main>
+      <h1>My Dogs Gallery</h1>
+        <ul id="album">
+          <!-- <li class="photo1"><img src="images/gallery1.jpg" alt="">
+            <div class="overlay">
+              <div class="textDesc">Meet Your New Friend1</div>
+            </div>
+            <p>Dog1</p>
+          </li>
+
+          <li class="photo2"><img src="images/gallery2.jpg" alt="">
+            <div class="overlay">
+              <div class="textDesc">Meet Your New Friend2</div>
+            </div>
+            <p>Dog2</p>
+          </li>
+
+          <li class="photo3"><img src="images/gallery3.jpg" alt="">
+            <div class="overlay">
+              <div class="textDesc">Meet Your New Friend3</div>
+            </div>
+            <p>Dog3</p>
+          </li>
+
+          <li class="photo4"><img src="images/gallery4.jpg" alt="">
+            <div class="overlay">
+              <div class="textDesc">Meet Your New Friend4</div>
+            </div>
+            <p>Dog4</p>
+          </li>
+
+          <li class="photo5"><img src="images/gallery5.jpg" alt="">
+            <div class="overlay">
+              <div class="textDesc">Meet Your New Friend5</div>
+            </div>
+            <p>Dog5</p>
+          </li>
+
+          <li class="photo6"><img src="images/gallery6.jpg" alt="">
+            <div class="overlay">
+              <div class="textDesc">Meet Your New Friend6</div>
+            </div>
+            <p>Dog6</p>
+          </li>
+
+          <li class="photo7"><img src="images/gallery7.jpg" alt="">
+            <div class="overlay">
+              <div class="textDesc">Meet Your New Friend7</div>
+            </div>
+            <p>Dog7</p>
+          </li>
+
+          <li class="photo8"><img src="images/gallery8.jpg" alt="">
+            <div class="overlay">
+              <div class="textDesc">Meet Your New Friend8</div>
+            </div>
+            <p>Dog8</p>
+          </li>
+
+          <li class="photo9"><img src="images/gallery9.jpg" alt="">
+            <div class="overlay">
+              <div class="textDesc">Meet Your New Friend9</div>
+            </div>
+            <p>Dog9</p>
+          </li>
+
+          <li class="photo10"><img src="images/gallery10.jpg" alt="">
+            <div class="overlay">
+              <div class="textDesc">Meet Your New Friend10</div>
+            </div>
+            <p>Dog10</p>
+          </li> -->
+        </ul>
+
+    </main>
+
+    <br>
+
+    <footer class= "clearfix" >
+      <div class="copy">
+        <center>&copy Copyright 2021 :: petAdoption.com</center>
+      </div>
+    </footer>
+
+  </div> <!--End of container-->
+
+
+  <script>
+    var captionTexts = ["Dog1", "Dog2", "Dog3", "Dog4", "Dog5", "Dog6", "Dog7", "Dog8", "Dog9", "Dog10"];
+    var descTexts = ["Meet your new Friend1", "Meet your new Friend2", "Meet your new Friend3", "Meet your new Friend4", "Meet your new Friend5",
+                    "Meet your new Friend6", "Meet your new Friend7", "Meet your new Friend8", "Meet your new Friend9", "Meet your new Friend10"];
+
+    var photos = [];
+    var fileNames = [];
+    var imageList = [];
+
+    //Create images
+    var openList = "<li class='photo'>";
+    var closeList = "</li>"
+
+    //Image Description when it hovers the image
+    var openDescTag = "<div class= 'overlay'>";
+    var closeDescTag = "</div>";
+
+    var caption;
+    var textOverlay;
+
+    //Create Images
+    for (var i = 0; i < 10; i++) {
+        fileNames.push("gallery" + (i + 1));
+        photos.push("<img src='images/" + fileNames[i] + ".jpg'>");
+
+        caption = "<p class='captionText'>" + captionTexts[i] + "</p>";
+        textOverlay = "<div class= 'overlay'>" + descTexts[i] + "</div>";
+        image = openList + textOverlay + photos[i]  + caption + closeList;
+
+        imageList.push(image);
+      }
+
+    // document.getElementById("album").innerHTML = imageList;
+    document.getElementById("album").innerHTML = imageList.join(" ");
+
+
+  </script>
+
+
+</body>
+
+</html>
